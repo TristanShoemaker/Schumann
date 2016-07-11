@@ -1,7 +1,7 @@
 %% Combine miniseed processed files
 
 directory = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/2400N_NE-FIELD/';
-save_to = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/VC2_NEB/MERGE/';
+save_to = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/2400N_NE-FIELD/MERGE/';
 
 files = dir(directory);
 
@@ -49,7 +49,7 @@ for q = 1:length(CPSD_list)
       %  CPSD_merge = [CPSD_merge CPSD{p}];
     %end
 end
-
+save(strcat(save_to, 'CPSD_merge.mat'),'CPSD_merge')
 %%
 
 %addpath([getenv('FRROOT') ,'/matlab'])
@@ -69,4 +69,4 @@ end
    % time_merge(n) = strt + (n-1)*T;
 %end
 
-save(strcat(save_to, 'CPSD_list.mat'),'CPSD_merge')
+

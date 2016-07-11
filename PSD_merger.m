@@ -1,6 +1,7 @@
 %% Combine miniseed processed files
 
-directory = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/';
+directory = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/';
+save_to = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/MERGE/';
 
 files = dir(directory);
 
@@ -33,7 +34,7 @@ for n = 1:length(sorted)
     end
 end
 
-save_to = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
+
 save(strcat(save_to, 'PSD_list.mat'), 'PSD_list');
 
 
@@ -48,7 +49,7 @@ for q = 1:length(PSD_list)
       %  PSD_merge = [PSD_merge PSD{p}];
     %end
 end
-
+save(strcat(save_to, 'PSD_merge.mat'),'PSD_merge')
 %%
 
 %addpath([getenv('FRROOT') ,'/matlab'])
@@ -68,4 +69,4 @@ end
    % time_merge(n) = strt + (n-1)*T;
 %end
 
-save('/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/PSD_merge.mat','PSD_merge')
+
