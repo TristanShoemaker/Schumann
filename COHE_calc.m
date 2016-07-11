@@ -11,7 +11,7 @@ clear PSD_merge
 %extra line to test git
 
 F = 0:0.1:125;
-
+T= 0:1:8640
 %%
 fmin = 11;
 fmax = 17;
