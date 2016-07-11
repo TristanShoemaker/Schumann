@@ -13,13 +13,13 @@ end
 thresh_min = prctile(RMS,pmin);
 thresh_max = prctile(RMS,pmax);
 
-% figure
-% H = histogram(RMS);
-% hold on
-% histogram(RMS(find((RMS > thresh_min) & (RMS < thresh_max))),'BinWidth',H.BinWidth)
-% xlim([0 (H.BinWidth * 60)])
-% xlabel('rms (nT/\surd{Hz})')
-% ylabel('Counts')
+figure
+H = histogram(RMS);
+hold on
+histogram(RMS(find((RMS > thresh_min) & (RMS < thresh_max))),'BinWidth',H.BinWidth)
+xlim([0 (H.BinWidth * 60)])
+xlabel('rms (nT/\surd{Hz})')
+ylabel('Counts')
 cleaned = find((RMS > thresh_min) & (RMS < thresh_max));
 
 

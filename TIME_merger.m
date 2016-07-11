@@ -1,7 +1,7 @@
 %% Combine miniseed processed files
 
-directory = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/';
-save_to = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
+directory = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/';
+save_to = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/';
 
 files = dir(directory);
 
@@ -37,17 +37,13 @@ save(strcat(save_to, 'times_list.mat'), 'times_list');
 
 
 %%
-load(strcat(save_to, 'times_list.mat'))
-times_merge = [];
+%load(strcat(save_to, 'times_list.mat'))
+times_merge = datetime(2016,06,30,00,00,01):seconds(10):datetime(2016,07,01,00,00,00);
 
-for q = 1:length(times_list)
-    times = times_list{q};
-    times_merge = cat(1,times_merge,times);
-end
 
 save(strcat(save_to, 'times_merge.mat'),'times_merge')
-%%
 
+%%
 %run /users/swinkels/deploy/MatlabVirgoTools/trunk/startup.m
 
 %format longg

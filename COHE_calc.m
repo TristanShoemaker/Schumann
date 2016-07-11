@@ -8,98 +8,96 @@ load('/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/PSD_merge.
 Pyy = PSD_merge;
 clear PSD_merge
 load('/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/times_merge.mat')
-t1 = times_merge;
-clear PSD_merge
-load('/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/times_merge.mat')
-t2 = times_merge;
-clear PSD_merge
+T = datenum(times_merge);
+clear times_merge
+
 
 F = 0:0.1:125;
-T = 1:1:8640;
 %%
 fmin = 11;
 fmax = 17;
 pmin = 1;
 pmax = 10;
 
-good1 = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
+good = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
 %good2 = clean(sqrt(Pxx),fmin,fmax,pmin,pmax);
 %good3 = clean(sqrt(Pyy),fmin,fmax,pmin,pmax);
 
-time_good1 = time_clean(sqrt(Pxx),800,1600,98);
+freq_good = time_clean(sqrt(Pxx),800,1600,98);
 %time_good2 = time_clean(sqrt(Pxx),800,1600,95);
 %time_good3 = time_clean(sqrt(Pyy),800,1600,95);
 
-Pxyc = abs(Pxy(time_good1,good1));
-Pxxc = abs(Pxx(time_good1,good1));
-Pyyc = abs(Pyy(time_good1,good1));
+Pxyc = abs(Pxy(freq_good,good));
+Pxxc = abs(Pxx(freq_good,good));
+Pyyc = abs(Pyy(freq_good,good));
+Tc = T(good);
+Fc = F(freq_good);
 % Pxyc = abs(Pxy(:,good1));
 % Pxxc = abs(Pxx(:,good1));
 % Pyyc = abs(Pyy(:,good1));
 %%
 cohe = abs(mean(Pxyc,2)).^2./(mean(Pxxc,2))./(mean(Pyyc,2));
 
-figure(4)
-semilogx(F(time_good1),sqrt(cohe),'LineWidth',1)
+figure('units','normalized','outerposition',[1 0 1 1])
+semilogx(Fc,sqrt(cohe),'LineWidth',1)
 %legend('')
 title('Coherence between Villa Cristina And North End Building')
 xlabel('Hz')
 ylabel('Coherence')
-set(gca,'fontsize',10)
+set(gca,'fontsize',15)
 %hold on
 grid on
 xlim([10 50])
 
 %%
-figure (5)
+figure('units','normalized','outerposition',[1 0 1 1])
 colormap bone
 %subplot(2,1,1)
-imagesc(T*10/60,F,log10(sqrt(abs(Pxx))))   
-title('Before Cleaning')
-xlabel('Seconds')
+imagesc(T,F,log10(sqrt(abs(Pxy))))
+set(gca,'XTick',T(1:720:end))
+datetick('x','keepticks','keeplimits')
+set(gca,'fontsize',15)
+title('Cross Power Spectrum Before Data Selection')
+xlabel('Hours on March 30 2016')
 ylabel('Hz')
 axis xy
 colorbar
 ylim([0 50])
-caxis([-4 -2]) %for VC1
-%caxis([-2 2]) %for 600W
-%caxis([-4 3]) %for VC1_600W
-%caxis([-6 3]) %for VC2_NEB
+caxis([-4 -2]) 
 
 %subplot(2,1,2)
-imagesc(T(good1)*10/60,F(time_good1),log10(sqrt(abs(Pxxc))))
-title('After Cleaning')
-xlabel('Seconds')
+imagesc(Tc,Fc,log10(sqrt(abs(Pxyc))))
+set(gca,'XTick',-1)
+set(gca,'fontsize',15)
+title('Cross Power Spectrum After Data Selection')
+xlabel('Selected Time')
 ylabel('Hz')
 axis xy
 colorbar
 ylim([0 50])
-caxis([-4 -2]) %for VC1
-%caxis([-2 2]) %for 600W
-%caxis([-4 3]) %for VC1_600W
-%caxis([-6 3]) %for VC2_NEB
+caxis([-4 -2])
 
 %%
 
-figure(6)
-%loglog(F,sqrt(mean(Pxxc,2)))
-%hold on
+figure('units','normalized','outerposition',[1 0 1 1])
 
-%loglog(F,sqrt(mean(Pyyc,2)))
-loglog(F(time_good1),sqrt(mean(abs(Pxyc),2)))
+loglog(Fc,sqrt(mean(Pxxc,2)))
+grid on
+hold on
+loglog(Fc,sqrt(mean(Pyyc,2)))
+loglog(Fc,sqrt(mean(abs(Pxyc),2)))
 % loglog(F,sqrt(mean(Pxx,2)))
 % loglog(F,sqrt(mean(Pyy,2)))
 % loglog(F,sqrt(mean(abs(Pxy),2)))
-grid on
-hold on
+set(gca,'fontsize',15)
 xlabel('Hz')
 ylabel('nT/\surd{Hz}')
-legend('not time cleaned','time cleaned')
-%legend('Villa Cristina Cleaned','600m West Cleaned',...
-%    'Cross Spectrum Cleaned','Villa Cristina','600m W','Cross Spectrum')
+%legend('not time cleaned','time cleaned')
+legend('Villa Cristina Cleaned','North End Building Cleaned',...
+   'Cross Spectrum Cleaned')
 
-xlim([5 150])
-ylim([1e-4 1e-2])
+xlim([5 50])
+ylim([2e-4 6e-3])
 
 
 
