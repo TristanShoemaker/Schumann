@@ -20,7 +20,7 @@ pmax = 10;
 %good2 = clean(sqrt(Pxx),fmin,fmax,pmin,pmax);
 %good3 = clean(sqrt(Pyy),fmin,fmax,pmin,pmax);
 
-%time_good1 = time_clean(sqrt(Pxx),800,1600,95);
+time_good1 = time_clean(sqrt(Pxx),800,1600,98);
 %time_good2 = time_clean(sqrt(Pxx),800,1600,95);
 %time_good3 = time_clean(sqrt(Pyy),800,1600,95);
 
