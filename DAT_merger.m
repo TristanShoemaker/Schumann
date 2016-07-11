@@ -1,6 +1,7 @@
 %% Combine miniseed processed files
 
 directory = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/';
+save_to = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
 
 files = dir(directory);
 
@@ -25,18 +26,19 @@ for n = 1:length(sorted)
         for k=1:1:length(m.dat33_list)
             if isempty(m.dat33_list{k}) == 0
                 ind=ind+1;
+                D = length(m.dat33_list{k})
                 dat33_list{ind} = m.dat33_list{k};
             end
         end
     end
 end
 
-save_to = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
+
 save(strcat(save_to, 'dat33_list.mat'), 'dat33_list');
 
 
 %%
-load('/data/procdata/detchar/env/Schumann/summer2016/600W/MAT_25-26/MERGE/dat33_list.mat')
+load(strcat(save_to, 'dat33_list.mat'))
 dat33_merge = [];
 
 for q = 1:length(dat33_list)
@@ -44,7 +46,7 @@ for q = 1:length(dat33_list)
     dat33_merge = cat(1,dat33_merge,dat33);
 end
 
-save('/data/procdata/detchar/env/Schumann/summer2016/600W/MAT_25-26/MERGE/dat33_merge.mat','dat33_merge')
+save(strcat(save_to, 'dat33_merge.mat'),'dat33_merge')
 %%
 
 %run /users/swinkels/deploy/MatlabVirgoTools/trunk/startup.m
