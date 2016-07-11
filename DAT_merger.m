@@ -1,6 +1,6 @@
 %% Combine miniseed processed files
 
-directory = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/';
+directory = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/';
 
 files = dir(directory);
 
