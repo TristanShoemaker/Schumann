@@ -1,15 +1,9 @@
 
-directory1 = '/data/procdata/detchar/env/Schumann/summer2016/2400N/MAT/MERGE/';
-directory2 = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/MERGE/';
-save_dir_CPSD = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/2400N_NE-FIELD/';
-save_dir_PSD1 = '/data/procdata/detchar/env/Schumann/summer2016/2400N/MAT/';
-save_dir_PSD2 = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/';
-
-% directory1 = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/';
-% directory2 = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
-% save_dir_CPSD = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/VC2_NEB/';
-% save_dir_PSD1 = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/';
-% save_dir_PSD2 = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/';
+directory1 = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/';
+directory2 = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
+save_dir_CPSD = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/VC2_NEB/';
+save_dir_PSD1 = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/';
+save_dir_PSD2 = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/';
 
 chunks = 4;
 
