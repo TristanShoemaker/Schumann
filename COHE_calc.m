@@ -7,16 +7,22 @@ clear PSD_merge
 load('/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/PSD_merge.mat')
 Pyy = PSD_merge;
 clear PSD_merge
+load('/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/times_merge.mat')
+t1 = times_merge;
+clear PSD_merge
+load('/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/times_merge.mat')
+t2 = times_merge;
+clear PSD_merge
 
 F = 0:0.1:125;
 T = 1:1:8640;
 %%
 fmin = 11;
 fmax = 17;
-gipmin = 1;
+pmin = 1;
 pmax = 10;
 
-%good1 = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
+good1 = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
 %good2 = clean(sqrt(Pxx),fmin,fmax,pmin,pmax);
 %good3 = clean(sqrt(Pyy),fmin,fmax,pmin,pmax);
 
@@ -35,20 +41,22 @@ cohe = abs(mean(Pxyc,2)).^2./(mean(Pxxc,2))./(mean(Pyyc,2));
 
 figure(4)
 semilogx(F(time_good1),sqrt(cohe),'LineWidth',1)
-legend('not time cleaned','time cleaned')
+%legend('')
+title('Coherence between Villa Cristina And North End Building')
 xlabel('Hz')
 ylabel('Coherence')
-hold on
+set(gca,'fontsize',10)
+%hold on
 grid on
-xlim([3 60])
+xlim([10 50])
 
 %%
 figure (5)
 colormap bone
-subplot(2,1,1)
-imagesc(T,F,log10(sqrt(abs(Pxx))))   
+%subplot(2,1,1)
+imagesc(T*10/60,F,log10(sqrt(abs(Pxx))))   
 title('Before Cleaning')
-xlabel('Hours')
+xlabel('Seconds')
 ylabel('Hz')
 axis xy
 colorbar
@@ -58,9 +66,10 @@ caxis([-4 -2]) %for VC1
 %caxis([-4 3]) %for VC1_600W
 %caxis([-6 3]) %for VC2_NEB
 
-subplot(2,1,2)
-imagesc(T(good1),F(time_good1),log10(sqrt(abs(Pxxc))))
+%subplot(2,1,2)
+imagesc(T(good1)*10/60,F(time_good1),log10(sqrt(abs(Pxxc))))
 title('After Cleaning')
+xlabel('Seconds')
 ylabel('Hz')
 axis xy
 colorbar
