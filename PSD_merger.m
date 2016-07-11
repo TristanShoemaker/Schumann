@@ -1,7 +1,7 @@
 %% Combine miniseed processed files
 
-directory = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/';
-save_to = '/data/procdata/detchar/env/Schumann/summer2016/NE-FIELD/MAT/MERGE/';
+directory = '/data/procdata/detchar/env/Schumann/summer2016/2400N/MAT/';
+save_to = '/data/procdata/detchar/env/Schumann/summer2016/2400N/MAT/MERGE/';
 
 files = dir(directory);
 

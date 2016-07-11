@@ -14,7 +14,7 @@ F = 0:0.1:125;
 fmin = 11;
 fmax = 17;
 pmin = 1;
-pmax = 10;
+pmax = 50;
 
 %Pxyc = clean(abs(Pxy),fmin,fmax,p);
 %Pxxc = clean(Pxx,fmin,fmax,p);
@@ -88,7 +88,7 @@ xlabel('Hz')
 ylabel('nT/\surd{Hz}')
 %legend('good1','good2','good3','respective')
 legend('2400N Cleaned','NE-FIELD Cleaned',...
-    'Cross Spectrum Cleaned')
+    'Cross Spectrum Cleaned','Villa Cristina','600m W','Cross Spectrum')
 
 xlim([1 2e2])
 ylim([1e-4 1e-2])
