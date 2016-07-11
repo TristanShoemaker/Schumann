@@ -13,7 +13,7 @@ T = 1:1:8640;
 %%
 fmin = 11;
 fmax = 17;
-pmin = 1;
+gipmin = 1;
 pmax = 10;
 
 %good1 = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
