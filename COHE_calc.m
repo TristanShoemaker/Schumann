@@ -46,7 +46,7 @@ xlim([3 60])
 figure (5)
 colormap bone
 subplot(2,1,1)
-imagesc(0:48,F,log10(sqrt(abs(Pyy))))   
+imagesc(0:48,F,log10(sqrt(abs(Pxy))))   
 title('Before Cleaning')
 xlabel('Hours')
 ylabel('Hz')
@@ -60,7 +60,7 @@ caxis([-4 -2]) %for VC1
 %caxis([-6 3]) %for VC2_NEB
 
 subplot(2,1,2)
-imagesc(0:48,F,log10(sqrt(abs(Pyyc))))
+imagesc(0:48,F,log10(sqrt(abs(Pxyc))))
 title('After Cleaning')
 ylabel('Hz')
 axis xy
