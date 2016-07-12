@@ -1,7 +1,7 @@
 %% Combine miniseed processed files
 
-directory = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/';
-save_to = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/';
+directory = '/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MA/';
+save_to = '/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MAT/MERGE/';
 
 files = dir(directory);
 
@@ -38,7 +38,7 @@ save(strcat(save_to, 'times_list.mat'), 'times_list');
 
 %%
 %load(strcat(save_to, 'times_list.mat'))
-times_merge = datetime(2016,06,30,00,00,01):seconds(10):datetime(2016,07,01,00,00,00);
+times_merge = datetime(2016,07,08,10,00,01):seconds(10):datetime(2016,07,09,14,00,00);
 
 
 save(strcat(save_to, 'times_merge.mat'),'times_merge')

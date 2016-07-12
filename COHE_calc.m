@@ -4,10 +4,10 @@ clear CPSD_merge
 load('/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MAT/MERGE/PSD_merge.mat')
 Pxx = PSD_merge;
 clear PSD_merge
-load('/data/procdata/detchar/env/Schumann/summer2016/NEB/WE-FIELD-S/MERGE/PSD_merge.mat')
+load('/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-S/MAT/MERGE/PSD_merge.mat')
 Pyy = PSD_merge;
 clear PSD_merge
-load('/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/times_merge.mat')
+load('/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MAT/MERGE/times_merge.mat')
 T = datenum(times_merge);
 clear times_merge
 
@@ -23,7 +23,7 @@ good = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
 %good2 = clean(sqrt(Pxx),fmin,fmax,pmin,pmax);
 %good3 = clean(sqrt(Pyy),fmin,fmax,pmin,pmax);
 
-freq_good = time_clean(sqrt(Pxx),800,1600,98);
+freq_good = time_clean(sqrt(Pxy),800,1600,98);
 %time_good2 = time_clean(sqrt(Pxx),800,1600,95);
 %time_good3 = time_clean(sqrt(Pyy),800,1600,95);
 
@@ -41,7 +41,7 @@ cohe = abs(mean(Pxyc,2)).^2./(mean(Pxxc,2))./(mean(Pyyc,2));
 figure('units','normalized','outerposition',[1 0 1 1])
 semilogx(Fc,sqrt(cohe),'LineWidth',1)
 %legend('')
-title('Coherence between Villa Cristina And North End Building')
+%title('Coherence between Villa Cristina And North End Building')
 xlabel('Hz')
 ylabel('Coherence')
 set(gca,'fontsize',15)
@@ -50,14 +50,14 @@ grid on
 xlim([10 50])
 
 %%
-figure('units','normalized','outerposition',[1 0 .7 .7])
+figure('units','normalized','outerposition',[1 0 1 1])
 colormap bone
-%subplot(2,1,1)
-imagesc(T,F,log10(sqrt(abs(Pxx))))
+subplot(2,1,1)
+imagesc(T,F,log10(sqrt(abs(Pxy))))
 set(gca,'XTick',T(1:720:end))
 datetick('x','keepticks','keeplimits')
 set(gca,'fontsize',15)
-title('Villa Cristina Before Data Selection')
+%title('Villa Cristina Before Data Selection')
 xlabel('Hours on March 30 2016')
 ylabel('Hz')
 axis xy
@@ -65,11 +65,11 @@ colorbar
 ylim([0 50])
 caxis([-4 -2]) 
 
-%subplot(2,1,2)
+subplot(2,1,2)
 imagesc(Tc,Fc,log10(sqrt(abs(Pxyc))))
 set(gca,'XTick',-1)
 set(gca,'fontsize',15)
-title('Cross Power Spectrum After Data Selection')
+%title('Cross Power Spectrum After Data Selection')
 xlabel('Selected Time')
 ylabel('Hz')
 axis xy
@@ -94,7 +94,7 @@ title('Power Spectrums')
 xlabel('Hz')
 ylabel('nT/\surd{Hz}')
 %legend('not time cleaned','time cleaned')
-legend('Villa Cristina Cleaned','North End Building Cleaned',...
+legend('WE-FIELD-N','WE-FIELD-S',...
    'Cross Spectrum Cleaned')
 
 xlim([5 50])
