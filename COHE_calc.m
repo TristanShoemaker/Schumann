@@ -1,10 +1,10 @@
-load('/data/procdata/detchar/env/Schumann/summer2016/CPSD/VC2_NEB/MERGE/CPSD_merge.mat')
+load('/data/procdata/detchar/env/Schumann/summer2016/CPSD/WE-FIELD/MERGE/CPSD_merge.mat')
 Pxy = CPSD_merge;
 clear CPSD_merge
-load('/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/PSD_merge.mat')
+load('/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MAT/MERGE/PSD_merge.mat')
 Pxx = PSD_merge;
 clear PSD_merge
-load('/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/PSD_merge.mat')
+load('/data/procdata/detchar/env/Schumann/summer2016/NEB/WE-FIELD-S/MERGE/PSD_merge.mat')
 Pyy = PSD_merge;
 clear PSD_merge
 
