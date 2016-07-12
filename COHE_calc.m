@@ -50,14 +50,14 @@ grid on
 xlim([10 50])
 
 %%
-figure('units','normalized','outerposition',[1 0 1 1])
+figure('units','normalized','outerposition',[1 0 .7 .7])
 colormap bone
 %subplot(2,1,1)
-imagesc(T,F,log10(sqrt(abs(Pxy))))
+imagesc(T,F,log10(sqrt(abs(Pxx))))
 set(gca,'XTick',T(1:720:end))
 datetick('x','keepticks','keeplimits')
 set(gca,'fontsize',15)
-title('Cross Power Spectrum Before Data Selection')
+title('Villa Cristina Before Data Selection')
 xlabel('Hours on March 30 2016')
 ylabel('Hz')
 axis xy
@@ -90,6 +90,7 @@ loglog(Fc,sqrt(mean(abs(Pxyc),2)))
 % loglog(F,sqrt(mean(Pyy,2)))
 % loglog(F,sqrt(mean(abs(Pxy),2)))
 set(gca,'fontsize',15)
+title('Power Spectrums')
 xlabel('Hz')
 ylabel('nT/\surd{Hz}')
 %legend('not time cleaned','time cleaned')
