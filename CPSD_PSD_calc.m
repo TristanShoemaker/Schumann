@@ -1,9 +1,9 @@
 
-directory1 = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/MERGE/';
-directory2 = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/MERGE/';
-save_dir_CPSD = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/VC2_NEB/';
-save_dir_PSD1 = '/data/procdata/detchar/env/Schumann/summer2016/VC2/MAT_30/';
-save_dir_PSD2 = '/data/procdata/detchar/env/Schumann/summer2016/NEB/MAT_30/';
+directory1 = '/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MAT/MERGE/';
+directory2 = '/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-S/MAT/MERGE/';
+save_dir_CPSD = '/data/procdata/detchar/env/Schumann/summer2016/CPSD/WE-FIELD/';
+save_dir_PSD1 = '/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-N/MAT/';
+save_dir_PSD2 = '/data/procdata/detchar/env/Schumann/summer2016/WE-FIELD-S/MAT/';
 
 chunks = 4;
 
@@ -29,8 +29,6 @@ PSD2 = cell(1,chunks);
 for n = 1:len
     chunk1 = dat1{n};
     chunk2 = dat2{n};
-    D = length(chunk1)
-    D = length(chunk2)
     local_n = mod(n, chunks);
     if local_n == 0
         local_n = chunks;
