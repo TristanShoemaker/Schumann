@@ -14,10 +14,11 @@ clear times_merge
 
 F = 0:0.1:125;
 %%
+for i = 10:20:90
 fmin = 11;
 fmax = 17;
 pmin = 1;
-pmax = 10;
+pmax = i;
 
 good = clean(sqrt(abs(Pxy)),fmin,fmax,pmin,pmax);
 %good2 = clean(sqrt(Pxx),fmin,fmax,pmin,pmax);
@@ -38,17 +39,17 @@ Fc = F(freq_good);
 %%
 cohe = abs(mean(Pxyc,2)).^2./(mean(Pxxc,2))./(mean(Pyyc,2));
 
-figure('units','normalized','outerposition',[1 0 1 1])
+%figure('units','normalized','outerposition',[1 0 1 1])
 semilogx(Fc,sqrt(cohe),'LineWidth',1)
-%legend('')
-%title('Coherence between Villa Cristina And North End Building')
+legend('10','30','50','70','90')
+title('Coherence')
 xlabel('Hz')
 ylabel('Coherence')
 set(gca,'fontsize',15)
-%hold on
+hold on
 grid on
 xlim([10 50])
-
+end
 %%
 figure('units','normalized','outerposition',[1 0 1 1])
 colormap bone
