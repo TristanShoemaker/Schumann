@@ -1,19 +1,19 @@
 Standard procedure is:
 =============================
 ```
-DAT\_converter.m (both sets) 
+DAT_converter.m (both sets) 
 	     v
-DAT\_merger.m (both sets)
+DAT_merger.m (both sets)
 	     v
-CPSD\_PSD\_CALC.m (only once)
+CPSD_PSD_CALC.m (only once)
  	     v
-PSD\_merger.m (both sets) + CPSD\_merger.m (only once)
+PSD_merger.m (both sets) + CPSD_merger.m (only once)
 	     v
 COHE_calc.m (only once)
 	     v
     dependant on:
 	     v
-  time\_clean.m + clean.m
+  time_clean.m + clean.m
 	     v
 	dependant on:
 	     v			     
