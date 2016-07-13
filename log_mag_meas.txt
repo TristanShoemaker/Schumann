@@ -1,0 +1,55 @@
+Villa Cristina and EGO
+
+dataset, time, description
+
+VC1, 23 june, datalogger STN1, 250Hz sampling, port A, chs 1 and 2, 10V FS
+             distance correlation test with two magnetometers outside of VillaCristina, oriented NS
+LT 
+11:16 to 11:21 - two mags 0.5m distant
+11:22 to 11:29 - two mags 1m   distant
+11:30 to 11:36 - two mags 2m   distant
+11:37 to 11:42 - two mags 5m   distant
+11:43 to 11:52 - two mags 10m  distant
+
+VC1, 23 - 27 june - datalogger STN1 - mag on port A (channel 3) FS 10V, trillium C20 on port B, FS 4V
+magnetometer inside villa Cristina, oriented NS
+
+EGO 600W, june 24 - june 27, oriented NS
+          datalogger STN02, external magnetometer, port A, 4V FS, 250Hz sampling
+
+
+VC2, 29 june - july 1st: same as above (swapped battery)
+
+EGO NEB, june 29 15:00:00 external magnetometer outside NEB, virgo ADC, channel ENV_NEB_MAG_W (oriented NS)
+         
+VC2, july 1st 
+tests for the 8Hz noise:
+LT
+9:04 - enter VC
+9:08 - bring ma outside (just magnetometer datalogger inside)
+9:16 - magnetometer back inside
+9:23 - disconnect seismometer
+9:30 - disconnect ethernet cable (which was left attached at datalogger port)
+9:32 - off
+
+VC1_600W 25/ to 26/
+
+VC2_NEB 30/
+
+first hour of VC1, last hour of VC2
+
+July 6, both mags oriented EW 
+1) NE-FIELD /43° 39' 20,56463'' 10° 31' 2,15105''
+STN01, portA, 10v
+
+2) 2400N /43° 39' 1,23167'', 10° 30'49,88994''
+STN02, portA 4V
+
+July 8, both mags oriented EW
+1) WE-FIELD-S /43° 38' 23,555792'', 10° 28' 6,06057''
+STN01, port A, 10V
+
+2) WE-FIELD-N  /43° 38' 28,54201'', 10° 28' 7,62221''
+STN02, portA, 4V
+ 
+
