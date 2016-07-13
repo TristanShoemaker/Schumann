@@ -4,7 +4,7 @@ Data analysis scripts.
 
 Standard procedure is:
 =============================
-DAT\_converter.m (both sets)
+DAT\_converter.m (both sets) \n
 	     v
 DAT\_merger.m (both sets)
 	     v
@@ -21,6 +21,7 @@ COHE_calc.m (only once)
        dependant on:
 	     v			     
 	 bandRMS.m
+
 =============================
 
 Most interesting parameters for adjusting the data selection and therefore the resulting coherence plot are in COHE\_calc.m.
