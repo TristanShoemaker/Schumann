@@ -1,11 +1,26 @@
-# Schumann
+# Schumann Resonances
 
-Data analysis scripts. Scripts for converting .miniseed to .mat are not included.
+Data analysis scripts. 
 
-Standard procedure is DAT\_merger.m -> CPSD\_PSD\_CALC.m -> PSD\_merger.m  -> COHE_calc.m
-                                                         -> CPSD\_merger.m ->
+Standard procedure is:
+=============================
+DAT\_converter.m (both sets)
+	     v
+DAT\_merger.m (both sets)
+	     v
+CPSD\_PSD\_CALC.m (only once)
+ 	     v
+PSD\_merger.m (both sets) + CPSD\_merger.m (only once)
+	     v
+COHE_calc.m (only once)
+	     v
+       dependant on:
+	     v
+  time\_clean.m + clean.m
+	     v
+       dependant on:
+	     v			     
+	 bandRMS.m
+=============================
 
-time\_clean.m is experimental, possible use for removing 8Hz 3 bin signal in VC data.
-
-Most interesting parameters are in COHE_calc.m and clean.m.
-
+Most interesting parameters for adjusting the data selection and therefore the resulting coherence plot are in COHE\_calc.m.
