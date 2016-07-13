@@ -47,7 +47,7 @@ ylabel('Coherence')
 set(gca,'fontsize',15)
 %hold on
 grid on
-xlim([10 50])
+xlim([5 50])
 
 %%
 figure('units','normalized','outerposition',[1 0 .7 .7])
